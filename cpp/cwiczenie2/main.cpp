@@ -34,13 +34,13 @@ void quickSort(vector<int> &vec, int low, int high){
 	}
 }
 
-int main(){
-	vector<int> vec = {24, 34, 57, 92, 12, 34, 32};
-	
-	quickSort(vec, 0, vec.size()-1);
-
-	for(auto i : vec){
-	 	cout<<i<<" ";
-	}
-	return 0;
-}
+//int main(){
+//	vector<int> vec = {24, 34, 57, 92, 12, 34, 32};
+//	
+//	quickSort(vec, 0, vec.size()-1);
+//
+//	for(auto i : vec){
+//	 	cout<<i<<" ";
+//	}
+//	return 0;
+//}

@@ -17,14 +17,14 @@ void bubbleSort(vector<int> &v) {
 	}
 }
 
-int main(){
-	vector<int> v = {52, 23, 45, 81, 36, 72, 91};
-
-	bubbleSort(v);
-
-	for(auto i : v){
-		cout<<i<<" ";
-	}
-
-	return 0;
-}
+//int main(){
+//	vector<int> v = {52, 23, 45, 81, 36, 72, 91};
+//
+//	bubbleSort(v);
+//
+//	for(auto i : v){
+//		cout<<i<<" ";
+//	}
+//
+//	return 0;
+//}
