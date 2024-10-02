@@ -1,6 +1,6 @@
-# Benchmark Sortowanie
+# Benchmark if / swich
 
-Program sprawdzający czas sortowania bąbelkowego i szybkiego sortowania
+Program sprawdzający czas if oraz swich
 
 ## Autorzy
 
