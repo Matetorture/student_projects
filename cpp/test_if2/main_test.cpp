@@ -38,11 +38,13 @@ TEST(BenchmarkTest, IfBenchmark) {
 // benchmark
 static bool test_swich(int i){
 	bool test = false;
-	if(i == 1){
+	swich(i){
+	case 1:
 		test = false;
-	}else{
+		break;
+	case 0:
 		test = true;
-	}
+		break;
 	return test;
 }
 
