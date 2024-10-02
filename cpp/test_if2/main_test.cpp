@@ -29,7 +29,7 @@ TEST(BenchmarkTest, IfBenchmark) {
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
 
-    std::cout << "Czas sortowania: " << elapsed_seconds.count() << "s\n";
+    std::cout << "Czas if: " << elapsed_seconds.count() << "s\n";
 }
 
 
@@ -58,7 +58,7 @@ TEST(BenchmarkTest, SwichBenchmark) {
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
 
-    std::cout << "Czas sortowania: " << elapsed_seconds.count() << "s\n";
+    std::cout << "Czas swich: " << elapsed_seconds.count() << "s\n";
 }
 
 
