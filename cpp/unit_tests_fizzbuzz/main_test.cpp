@@ -4,15 +4,18 @@
 
 
 TEST(mojagrupatestow, mojtest) {
-   #TODO: tu napisz test
+   string reult = FizzBuzz(3);
+   EXPECT_EQ(FizzBuzz, "Fizz");
 }
 
 TEST(mojagrupatestow, mojtest) {
-   #TODO: tu napisz test
+   string reult = FizzBuzz(5);
+   EXPECT_EQ(FizzBuzz, "Fizz");
 }
 
 TEST(mojagrupatestow, mojtest) {
-   #TODO: tu napisz test
+   string reult = FizzBuzz(15);
+   EXPECT_EQ(FizzBuzz, "FizzBuzz");
 }
 
 
