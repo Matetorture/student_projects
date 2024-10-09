@@ -23,7 +23,7 @@ Plik zawiera funkcję FizzBuzz, która dla liczby całkowitej n zwraca:
 
 `functions.cpp`
 
-```
+```cpp
 #include <string>
 
 using namespace std;
@@ -46,7 +46,7 @@ Ten plik służy do przetestowania działania funkcji FizzBuzz w sposób manualn
 
 `main.cpp`
 
-```
+```cpp
 #include <iostream>
 #include "functions.cpp"
 
@@ -90,7 +90,7 @@ Plik zawiera testy jednostkowe funkcji FizzBuzz. Testy sprawdzają różne przyp
 
 `main_test.cpp`
 
-```
+```cpp
 #include <gtest/gtest.h>
 #include "functions.cpp"
 
