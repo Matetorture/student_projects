@@ -1,25 +1,29 @@
-Dokumentacja do projektu FizzBuzz
+# Program sprawdzając funkcje FizzBuzz
 
 Ten projekt implementuje klasyczne zadanie "FizzBuzz" oraz zawiera odpowiednie testy do sprawdzenia poprawności jego działania. Kod składa się z trzech głównych plików:
 
-    functions.cpp – Zawiera implementację funkcji FizzBuzz.
-    main.cpp – Zawiera przykładowe wywołania funkcji FizzBuzz w celu testowania działania kodu.
-    main_test.cpp – Zawiera zestaw testów jednostkowych wykorzystujących bibliotekę Google Test do weryfikacji działania funkcji FizzBuzz.
+- functions.cpp – Zawiera implementację funkcji FizzBuzz.
+- main.cpp – Zawiera przykładowe wywołania funkcji FizzBuzz w celu testowania działania kodu.
+- main_test.cpp – Zawiera zestaw testów jednostkowych weryfikujących działanie funkcji FizzBuzz.
 
-Pliki
-functions.cpp
+# Uruchamianie testów
+
+Aby uruchomić testy, należy skompilować plik main_test.cpp. W wyniku zostanie wyświetlony raport z testów, który informuje, czy testy zakończyły się sukcesem.
+
+# Pliki
+
+## Functions
 
 Plik zawiera funkcję FizzBuzz, która dla liczby całkowitej n zwraca:
 
-    "FizzBuzz" – jeżeli liczba n jest podzielna przez 15,
-    "Fizz" – jeżeli liczba n jest podzielna przez 3,
-    "Buzz" – jeżeli liczba n jest podzielna przez 5,
-    pusty string ("") w przeciwnym wypadku.
+- "FizzBuzz" – jeżeli liczba n jest podzielna przez 15,
+- "Fizz" – jeżeli liczba n jest podzielna przez 3,
+- "Buzz" – jeżeli liczba n jest podzielna przez 5,
+- pusty string ("") w przeciwnym wypadku.
 
-Kod
+`functions.cpp`
 
-cpp
-
+```
 #include <string>
 
 using namespace std;
@@ -34,14 +38,15 @@ string FizzBuzz(int n){
   }
   return "";
 }
+```
 
-main.cpp
+## Main
 
 Ten plik służy do przetestowania działania funkcji FizzBuzz w sposób manualny poprzez wywołanie jej dla kilku wartości liczbowych i wyświetlenie wyniku.
-Kod
 
-cpp
+`main.cpp`
 
+```
 #include <iostream>
 #include "functions.cpp"
 
@@ -55,9 +60,10 @@ int main() {
     cout << "-=-=-=-=-=-=-=-=-" << endl;
     return 0;
 }
+```
 
-Przykładowe wyjście programu:
-
+Wynik wyświetlany w konsoli:
+```
 1 
 2 
 3 Fizz
@@ -73,20 +79,18 @@ Przykładowe wyjście programu:
 13 
 14 
 15 FizzBuzz
+```
+## Main test:
 
-main_test.cpp
+Plik zawiera testy jednostkowe funkcji FizzBuzz. Testy sprawdzają różne przypadki, w tym:
 
-Plik zawiera testy jednostkowe funkcji FizzBuzz, które zostały napisane przy użyciu biblioteki Google Test. Testy sprawdzają różne przypadki, w tym:
+- Podzielność przez 3 (zwracanie "Fizz"),
+- Podzielność przez 5 (zwracanie "Buzz"),
+- Podzielność przez 15 (zwracanie "FizzBuzz").
 
-    Podzielność przez 3 (zwracanie "Fizz"),
-    Podzielność przez 5 (zwracanie "Buzz"),
-    Podzielność przez 15 (zwracanie "FizzBuzz").
+`main_test.cpp`
 
-Kod
-
-cpp
-
-// main_test.cpp
+```
 #include <gtest/gtest.h>
 #include "functions.cpp"
 
@@ -105,13 +109,8 @@ TEST(FizzBuzzTest, FizzBuzz) {
    EXPECT_EQ(result, "FizzBuzz");
 }
 
-// ... inne testy ...
-
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-
-Uruchamianie testów
-
-Aby uruchomić testy, należy skompilować plik main_test.cpp z biblioteką Google Test i uruchomić powstały program. W wyniku zostanie wyświetlony raport z testów, który informuje, czy testy zakończyły się sukcesem.
+```
