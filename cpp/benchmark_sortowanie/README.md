@@ -1,7 +1,7 @@
 # Benchmark Sortowanie
 
 ## Opis ogólny
-Poniższy zestaw testów ma na celu porównanie wydajności dwóch różnych algorytmów sortowania: **Quick Sort** oraz **Bubble Sort**. Testy mierzą czas potrzebny na posortowanie wektora składającego się z 10,000 losowych liczb całkowitych. Czas jest mierzony przy pomocy standardowej biblioteki `chrono`, a wyniki są wyświetlane w sekundach.
+Zestaw testów ma na celu porównanie wydajności dwóch różnych algorytmów sortowania: **Quick Sort** oraz **Bubble Sort**. Testy mierzą czas potrzebny na posortowanie wektora składającego się z 10,000 losowych liczb całkowitych. Czas jest mierzony przy pomocy standardowej biblioteki `chrono`, a wyniki są wyświetlane w sekundach.
 
 ## Struktura testów
 
@@ -82,6 +82,12 @@ int main(int argc, char **argv) {
     return RUN_ALL_TESTS();
 }
 ```
+## Wyniki
+
+| Algorytm     | Rozmiar Danych | Czas Sortowania (s) |
+|--------------|----------------|---------------------|
+| Bubble Sort  | 10,000         | 0                   |
+| Quick Sort   | 10,000         | 0                   |
 
 ## Autorzy
 
