@@ -82,7 +82,7 @@ Wynik wyświetlany w konsoli:
 ```
 ## Main test:
 
-Plik zawiera testy jednostkowe funkcji FizzBuzz. Testy sprawdzają różne przypadki, w tym:
+Plik zawiera testy jednostkowe funkcji FizzBuzz. Testy sprawdzają różne przypadki:
 
 - Podzielność przez 3 (zwracanie "Fizz"),
 - Podzielność przez 5 (zwracanie "Buzz"),
