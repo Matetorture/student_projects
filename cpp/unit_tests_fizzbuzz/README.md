@@ -1,6 +1,6 @@
 # Program sprawdzając funkcje FizzBuzz
 
-Ten projekt implementuje klasyczne zadanie "FizzBuzz" oraz zawiera odpowiednie testy do sprawdzenia poprawności jego działania. Kod składa się z trzech głównych plików:
+Projekt implementuje klasyczne zadanie "FizzBuzz" oraz zawiera odpowiednie testy do sprawdzenia poprawności jego działania. Kod składa się z trzech głównych plików:
 
 - functions.cpp – Zawiera implementację funkcji FizzBuzz.
 - main.cpp – Zawiera przykładowe wywołania funkcji FizzBuzz w celu testowania działania kodu.
@@ -179,3 +179,29 @@ int main(int argc, char **argv) {
     return RUN_ALL_TESTS();
 }
 ```
+
+# Wyniki testów jednostkowych dla funkcji FizzBuzz
+
+| Test         | Wejście | Oczekiwany wynik | Faktyczny wynik | Status   |
+|--------------|---------|------------------|-----------------|----------|
+| FizzBuzz1    | 1       | ""               | ""              | ✔️       |
+| FizzBuzz2    | 2       | ""               | ""              | ✔️       |
+| FizzBuzz3    | 3       | "Fizz"           | "Fizz"          | ✔️       |
+| FizzBuzz4    | 4       | ""               | ""              | ✔️       |
+| FizzBuzz5    | 5       | "Buzz"           | "Buzz"          | ✔️       |
+| FizzBuzz6    | 6       | "Fizz"           | "Fizz"          | ✔️       |
+| FizzBuzz7    | 7       | ""               | ""              | ✔️       |
+| FizzBuzz8    | 8       | ""               | ""              | ✔️       |
+| FizzBuzz9    | 9       | "Fizz"           | "Fizz"          | ✔️       |
+| FizzBuzz10   | 10      | "Buzz"           | "Buzz"          | ✔️       |
+| FizzBuzz11   | 11      | ""               | ""              | ✔️       |
+| FizzBuzz12   | 12      | "Fizz"           | "Fizz"          | ✔️       |
+| FizzBuzz13   | 13      | ""               | ""              | ✔️       |
+| FizzBuzz14   | 14      | ""               | ""              | ✔️       |
+| FizzBuzz15   | 15      | "FizzBuzz"       | "FizzBuzz"      | ✔️       |
+| FizzBuzz16   | 16      | ""               | ""              | ✔️       |
+
+## Podsumowanie
+
+Wszystkie testy zakończyły się sukcesem, a wyniki funkcji `FizzBuzz` dla podanych wartości odpowiadają oczekiwanym rezultatom.
+
