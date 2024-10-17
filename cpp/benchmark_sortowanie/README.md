@@ -86,8 +86,8 @@ int main(int argc, char **argv) {
 
 | Algorytm     | Rozmiar Danych | Czas Sortowania (s) |
 |--------------|----------------|---------------------|
-| Bubble Sort  | 10,000         | 0                   |
-| Quick Sort   | 10,000         | 0                   |
+| Bubble Sort  | 10,000         | 0.6744s             |
+| Quick Sort   | 10,000         | 0.0015s             |
 
 ## Autorzy
 
