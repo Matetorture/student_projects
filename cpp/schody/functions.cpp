@@ -19,10 +19,10 @@ struct StairsResult {
 };
 
 StairsResult calculate_stairs(double Sh, double Sl) {
-    double min_height = 15.0;
-    double max_height = 19.0;
-    double min_depth = 50.0;
-    double max_depth = 70.0;
+    double min_height = 16.0;
+    double max_height = 18.0;
+    double min_depth = 25.0;
+    double max_depth = 32.0;
 
     int num_steps = static_cast<int>(Sh / max_height);
 
