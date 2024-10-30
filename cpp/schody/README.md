@@ -9,6 +9,7 @@ Podajemy:
 - całkowita wysokość schodów (Sh)
 - całkowita głębokość schodów (Sl)
 
+<img src="schody.png">
 
 Ten projekt to aplikacja konsolowa, która oblicza parametry schodów, takie jak liczba stopni, wysokość stopnia i głębokość stopnia na podstawie podanych przez użytkownika całkowitych wymiarów schodów. Program sprawdza również, czy wyliczone parametry są zgodne z określonymi warunkami technicznymi (wysokość i głębokość stopni).
 
