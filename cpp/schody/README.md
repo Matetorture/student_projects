@@ -12,6 +12,7 @@ Podajemy:
 <img src="schody.png">
 Rys 1 Schemat schodów
 
+
 Ten projekt to aplikacja konsolowa, która oblicza parametry schodów, takie jak liczba stopni, wysokość stopnia i głębokość stopnia na podstawie podanych przez użytkownika całkowitych wymiarów schodów. Program sprawdza również, czy wyliczone parametry są zgodne z określonymi warunkami technicznymi (wysokość i głębokość stopni).
 
 ## Struktura projektu
