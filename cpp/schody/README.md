@@ -2,8 +2,8 @@
 
 Wynik:
 - ilość stopni 
-- wysokość stpnia (od 15 do 19)
-- głębokość stopnia (od 50 do 70)
+- wysokość stopnia (od 16 do 18)
+- głębokość stopnia (od 25 do 32)
 
 Podajemy:
 - całkowita wysokość schodów (Sh)
