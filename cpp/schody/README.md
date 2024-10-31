@@ -73,4 +73,59 @@ Testy zostały podzielone na trzy główne grupy:
 
 `main_test.cpp`
 
+#include <iostream>
+#include <cmath>
+#include <limits>
+
+int main() {
+    // Zmienna całkowitej wysokości i głębokości schodów
+    double Sh, Sl;
+    std::cout << "Podaj całkowitą wysokość schodów (Sh): ";
+    std::cin >> Sh;
+    std::cout << "Podaj całkowitą głębokość schodów (Sl): ";
+    std::cin >> Sl;
+
+    // Zmienna do przechowywania najbardziej optymalnych wyników
+    int bestSteps = 0;
+    double bestHeight = 0, bestDepth = 0;
+    double minDepthDiff = std::numeric_limits<double>::max();
+
+    // Pętla dla każdej możliwej wartości wysokości stopnia od 15 do 19
+    for (int stepHeight = 15; stepHeight <= 19; ++stepHeight) {
+        int steps = static_cast<int>(Sh / stepHeight);
+
+        // Sprawdzamy czy liczba stopni razy wysokość stopnia równa się Sh
+        if (steps * stepHeight == Sh) {
+            // Obliczamy odpowiednią głębokość stopnia tak, aby nie przekroczyć Sl
+            for (int stepDepth = 50; stepDepth <= 70; ++stepDepth) {
+                double totalDepth = steps * stepDepth;
+
+                // Sprawdzamy czy głębokość całkowita jest mniejsza od Sl
+                if (totalDepth <= Sl) {
+                    double depthDiff = Sl - totalDepth;
+
+                    // Wybieramy najbardziej optymalną głębokość
+                    if (depthDiff < minDepthDiff) {
+                        minDepthDiff = depthDiff;
+                        bestSteps = steps;
+                        bestHeight = stepHeight;
+                        bestDepth = stepDepth;
+                    }
+                }
+            }
+        }
+    }
+
+    // Wyświetlenie najbardziej optymalnych wyników
+    if (bestSteps > 0) {
+        std::cout << "Optymalna liczba stopni: " << bestSteps << std::endl;
+        std::cout << "Wysokość jednego stopnia: " << bestHeight << " cm" << std::endl;
+        std::cout << "Głębokość jednego stopnia: " << bestDepth << " cm" << std::endl;
+    } else {
+        std::cout << "Nie znaleziono rozwiązania dla podanych wymagań." << std::endl;
+    }
+
+    return 0;
+}
+
 
