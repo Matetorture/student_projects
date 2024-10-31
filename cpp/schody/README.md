@@ -1,19 +1,19 @@
 # Schody
 
-Wynik:
+## Opis
+Aplikacja konsolowa, która oblicza parametry schodów, takie jak liczba stopni, wysokość stopnia i głębokość stopnia na podstawie podanych przez użytkownika całkowitych wymiarów schodów. Program sprawdza również, czy wyliczone parametry są zgodne z określonymi warunkami technicznymi (wysokość i głębokość stopni).
+
+Dane wejściowe:
+- całkowita wysokość schodów (Sh)
+- całkowita głębokość schodów (Sl)
+
+Dane wyjściowe:
 - ilość stopni 
 - wysokość stopnia (od 16 do 18)
 - głębokość stopnia (od 25 do 32)
 
-Podajemy:
-- całkowita wysokość schodów (Sh)
-- całkowita głębokość schodów (Sl)
-
 <img src="schody.png">
-Rys 1 Schemat schodów
-
-## Opis
-Ten projekt to aplikacja konsolowa, która oblicza parametry schodów, takie jak liczba stopni, wysokość stopnia i głębokość stopnia na podstawie podanych przez użytkownika całkowitych wymiarów schodów. Program sprawdza również, czy wyliczone parametry są zgodne z określonymi warunkami technicznymi (wysokość i głębokość stopni).
+<p style="text-align:center">Rys. 1. Schemat schodów.</p>
 
 ## Struktura projektu
 
