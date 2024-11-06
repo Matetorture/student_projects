@@ -48,6 +48,60 @@ Funkcja zwraca obiekt `StairsResult` z wypełnionymi wartościami liczby stopni,
 
 `function.cpp`
 
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+struct StairsResult {
+    int num_steps;
+    double step_height;
+    double step_depth;
+
+    //operator ==
+    bool operator==(const StairsResult& other) const {
+	return num_steps == other.num_steps &&
+	    step_height == other.step_height &&
+	    step_depth == other.step_depth;
+    }
+};
+
+StairsResult calculate_stairs(double Sh, double Sl) {
+    int min_height = 16;
+    int max_height = 19;
+    int min_depth = 25;
+    int max_depth = 32;
+
+    int bestSteps = 0;
+    double bestHeight = 0, bestDepth = 0;
+    double minDepthDiff = std::numeric_limits<double>::max();
+
+    for (int stepHeight = min_height; stepHeight <= max_height; ++stepHeight) {
+        int steps = static_cast<int>(Sh / stepHeight);
+
+        //if (steps * stepHeight == Sh) {
+            for (int stepDepth = min_depth; stepDepth <= max_depth; ++stepDepth) {
+                double totalDepth = steps * stepDepth;
+
+                if (totalDepth <= Sl) {
+                    double depthDiff = Sl - totalDepth;
+
+                    if (depthDiff < minDepthDiff) {
+                        minDepthDiff = depthDiff;
+                        bestSteps = steps;
+                        bestHeight = stepHeight;
+                        bestDepth = stepDepth;
+                    }
+                }
+            }
+        //}
+    }
+
+    return {bestSteps, bestHeight, bestDepth};
+}
+```
+
 Plik: main.cpp
 
 Plik main.cpp zawiera funkcję main, która odpowiada za interakcję z użytkownikiem:
@@ -57,66 +111,76 @@ Plik main.cpp zawiera funkcję main, która odpowiada za interakcję z użytkown
 - Wyświetla wynik obliczeń lub komunikat o błędzie, jeśli obliczenia się nie powiodły.
 
 `main.cpp`
+```cpp
+#include <iostream>
+#include "functions.cpp"
+
+using namespace std;
+
+int main() {
+    double Sh, Sl;
+    
+    cout << "Podaj całkowitą wysokość schodów (Sh): ";
+    cin >> Sh;
+    cout << "Podaj całkowitą głębokość schodów (Sl): ";
+    cin >> Sl;
+
+    StairsResult wynik = calculate_stairs(Sh, Sl);
+
+    //if (wynik.success) {
+        cout << "Ilość stopni: " << wynik.num_steps << endl;
+        cout << "Wysokość stopnia: " << wynik.step_height << " cm" << endl;
+        cout << "Głębokość stopnia: " << wynik.step_depth << " cm" << endl;
+    //} else {
+        //cout << wynik.message << endl;
+    //}
+
+    return 0;
+}
+```
 
 Plik: main_test.cpp
 
 Plik main_test.cpp zawiera zestaw testów jednostkowych dla funkcji calculate_stairs. Testy są realizowane przy użyciu frameworka Google Test.
 
 `main_test.cpp`
+```cpp
+#include <gtest/gtest.h>
+#include "functions.cpp"
 
-#include <iostream>
-#include <cmath>
-#include <limits>
-
-int main() {
-    // Zmienna całkowitej wysokości i głębokości schodów
-    double Sh, Sl;
-    std::cout << "Podaj całkowitą wysokość schodów (Sh): ";
-    std::cin >> Sh;
-    std::cout << "Podaj całkowitą głębokość schodów (Sl): ";
-    std::cin >> Sl;
-
-    // Zmienna do przechowywania najbardziej optymalnych wyników
-    int bestSteps = 0;
-    double bestHeight = 0, bestDepth = 0;
-    double minDepthDiff = std::numeric_limits<double>::max();
-
-    // Pętla dla każdej możliwej wartości wysokości stopnia od 15 do 19
-    for (int stepHeight = 15; stepHeight <= 19; ++stepHeight) {
-        int steps = static_cast<int>(Sh / stepHeight);
-
-        // Sprawdzamy czy liczba stopni razy wysokość stopnia równa się Sh
-        if (steps * stepHeight == Sh) {
-            // Obliczamy odpowiednią głębokość stopnia tak, aby nie przekroczyć Sl
-            for (int stepDepth = 50; stepDepth <= 70; ++stepDepth) {
-                double totalDepth = steps * stepDepth;
-
-                // Sprawdzamy czy głębokość całkowita jest mniejsza od Sl
-                if (totalDepth <= Sl) {
-                    double depthDiff = Sl - totalDepth;
-
-                    // Wybieramy najbardziej optymalną głębokość
-                    if (depthDiff < minDepthDiff) {
-                        minDepthDiff = depthDiff;
-                        bestSteps = steps;
-                        bestHeight = stepHeight;
-                        bestDepth = stepDepth;
-                    }
-                }
-            }
-        }
-    }
-
-    // Wyświetlenie najbardziej optymalnych wyników
-    if (bestSteps > 0) {
-        std::cout << "Optymalna liczba stopni: " << bestSteps << std::endl;
-        std::cout << "Wysokość jednego stopnia: " << bestHeight << " cm" << std::endl;
-        std::cout << "Głębokość jednego stopnia: " << bestDepth << " cm" << std::endl;
-    } else {
-        std::cout << "Nie znaleziono rozwiązania dla podanych wymagań." << std::endl;
-    }
-
-    return 0;
+TEST(calculate_stairs, schody0) {
+    StairsResult wynik = calculate_stairs(100, 140);
+    StairsResult oczekiwany = {5, 17, 28};
+    EXPECT_EQ(wynik, oczekiwany);
+}
+TEST(calculate_stairs, schody1) {
+    StairsResult wynik = calculate_stairs(100, 150);
+    StairsResult oczekiwany = {6, 16, 25};
+    EXPECT_EQ(wynik, oczekiwany);
+}
+TEST(calculate_stairs, schody2) {
+    StairsResult wynik = calculate_stairs(190, 250);
+    StairsResult oczekiwany = {10, 18, 25};
+    EXPECT_EQ(wynik, oczekiwany);
+}
+TEST(calculate_stairs, schody3) {
+    StairsResult wynik = calculate_stairs(200, 280);
+    StairsResult oczekiwany = {10, 19, 28};
+    EXPECT_EQ(wynik, oczekiwany);
+}
+TEST(calculate_stairs, schody4) {
+    StairsResult wynik = calculate_stairs(200, 300);
+    StairsResult oczekiwany = {12, 16, 25};
+    EXPECT_EQ(wynik, oczekiwany);
+}
+TEST(calculate_stairs, schody5) {
+    StairsResult wynik = calculate_stairs(380, 500);
+    StairsResult oczekiwany = {20, 19, 25};
+    EXPECT_EQ(wynik, oczekiwany);
 }
 
-
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+```
