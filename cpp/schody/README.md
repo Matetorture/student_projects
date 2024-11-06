@@ -9,7 +9,7 @@ Dane wejściowe:
 
 Dane wyjściowe:
 - ilość stopni `num_steps`
-- wysokość stopnia (od 16 do 18) `step_height`
+- wysokość stopnia (od 16 do 19) `step_height`
 - głębokość stopnia (od 25 do 32) `step_depth`
 
 <img src="schody.png">
