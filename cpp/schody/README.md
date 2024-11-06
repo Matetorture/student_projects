@@ -82,7 +82,6 @@ StairsResult calculate_stairs(double Sh, double Sl) {
     for (double stepHeight = min_height; stepHeight <= max_height; stepHeight += chcek_number) {
         int steps = static_cast<int>(Sh / stepHeight);
 
-        //if (steps * stepHeight == Sh) {
             for (double stepDepth = min_depth; stepDepth <= max_depth; stepDepth += chcek_number) {
                 double totalDepth = steps * stepDepth;
 
@@ -97,7 +96,6 @@ StairsResult calculate_stairs(double Sh, double Sl) {
                     }
                 }
             }
-        //}
     }
 
     return {bestSteps, bestHeight, bestDepth};
