@@ -22,15 +22,17 @@ StairsResult calculate_stairs(double Sh, double Sl) {
     int min_depth = 25;
     int max_depth = 32;
 
+    double chcek_number = 0.01;
+
     int bestSteps = 0;
     double bestHeight = 0, bestDepth = 0;
     double minDepthDiff = std::numeric_limits<double>::max();
 
-    for (int stepHeight = min_height; stepHeight <= max_height; ++stepHeight) {
+    for (double stepHeight = min_height; stepHeight <= max_height; stepHeight += chcek_number) {
         int steps = static_cast<int>(Sh / stepHeight);
 
         //if (steps * stepHeight == Sh) {
-            for (int stepDepth = min_depth; stepDepth <= max_depth; ++stepDepth) {
+            for (double stepDepth = min_depth; stepDepth <= max_depth; stepDepth += chcek_number) {
                 double totalDepth = steps * stepDepth;
 
                 if (totalDepth <= Sl) {
