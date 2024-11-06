@@ -143,6 +143,18 @@ Plik: main_test.cpp
 
 Plik main_test.cpp zawiera zestaw testów jednostkowych dla funkcji calculate_stairs. Testy są realizowane przy użyciu frameworka Google Test.
 
+# Tabela testów jednostkowych
+
+| Test              | Wartość `Sh` | Wartość `Sl` | Oczekiwane `num_steps` | Oczekiwane `step_height` | Oczekiwane `step_depth` | Test zaliczony |
+|-------------------|--------------|--------------|------------------------|--------------------------|--------------------------|----------------|
+| **schody0**       | 100          | 140          | 5                      | 17                       | 28                       | Tak            |
+| **schody1**       | 100          | 150          | 6                      | 16                       | 25                       | Tak            |
+| **schody2**       | 190          | 250          | 10                     | 18                       | 25                       | Tak            |
+| **schody3**       | 200          | 280          | 10                     | 19                       | 28                       | Tak            |
+| **schody4**       | 200          | 300          | 12                     | 16                       | 25                       | Tak            |
+| **schody5**       | 380          | 500          | 20                     | 19                       | 25                       | Tak            |
+
+
 `main_test.cpp`
 ```cpp
 #include <gtest/gtest.h>
