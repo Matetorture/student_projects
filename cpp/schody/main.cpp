@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    double Sh, Sl;
+    float Sh, Sl;
     
     cout << "Podaj całkowitą wysokość schodów (Sh): ";
     cin >> Sh;
