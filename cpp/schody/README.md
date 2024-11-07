@@ -146,14 +146,15 @@ Plik main_test.cpp zawiera zestaw testów jednostkowych dla funkcji calculate_st
 
 # Tabela testów jednostkowych
 
-| Test              | Wartość `Sh` | Wartość `Sl` | Oczekiwane `num_steps` | Oczekiwane `step_height` | Oczekiwane `step_depth`  | Test zaliczony |
+| Test              | Wartość `Sh` | Wartość `Sl` | Oczekiwane `num_steps` | Oczekiwane `step_height` | Oczekiwane `step_depth` | Test zaliczony |
 |-------------------|--------------|--------------|------------------------|--------------------------|--------------------------|----------------|
-| **schody0**       | 100          | 140          | 5                      | 17                       | 28                       | ✅             |
-| **schody1**       | 100          | 150          | 6                      | 16                       | 25                       | ✅             |
-| **schody2**       | 190          | 250          | 10                     | 18                       | 25                       | ✅             |
-| **schody3**       | 200          | 280          | 10                     | 19                       | 28                       | ✅             |
-| **schody4**       | 200          | 300          | 12                     | 16                       | 25                       | ✅             |
-| **schody5**       | 380          | 500          | 20                     | 19                       | 25                       | ✅             |
+| **schody0**       | 85           | 135          | 5                      | 17                       | 27                       | ✅             |
+| **schody1**       | 170          | 270          | 10                     | 17                       | 27                       | ✅             |
+| **schody2**       | 72           | 120          | 4                      | 18                       | 30                       | ✅             |
+| **schody3**       | 144          | 240          | 8                      | 18                       | 30                       | ✅             |
+| **schody4**       | 105          | 189          | 6                      | 17.5                     | 31.5                     | ✅             |
+| **schody5**       | 72           | 100          | 4                      | 18                       | 25                       | ✅             |
+| **schody6**       | 756          | 1292.5       | 45                     | 16.8                     | 28.72                    | ✅             |
 
 
 `main_test.cpp`
