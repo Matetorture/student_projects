@@ -119,8 +119,8 @@ Plik main.cpp zawiera funkcję main, która odpowiada za interakcję z użytkown
 using namespace std;
 
 int main() {
-    double Sh, Sl;
-    
+    float Sh, Sl;
+
     cout << "Podaj całkowitą wysokość schodów (Sh): ";
     cin >> Sh;
     cout << "Podaj całkowitą głębokość schodów (Sl): ";
@@ -128,13 +128,13 @@ int main() {
 
     StairsResult wynik = calculate_stairs(Sh, Sl);
 
-    //if (wynik.success) {
+    if (wynik.num_steps != 0) {
         cout << "Ilość stopni: " << wynik.num_steps << endl;
         cout << "Wysokość stopnia: " << wynik.step_height << " cm" << endl;
         cout << "Głębokość stopnia: " << wynik.step_depth << " cm" << endl;
-    //} else {
-        //cout << wynik.message << endl;
-    //}
+    } else {
+        cout << "Nie da sie stworzyć takich schodów" << endl;
+    }
 
     return 0;
 }
