@@ -2,16 +2,12 @@
 4.10.3+=true
 
 [/home/uczen/Desktop/example]
-row=4
+row=3
 col=0
 
 [/home/uczen/Desktop/student_projects.desktop]
 row=0
 col=1
-
-[/home/uczen/Desktop/schody]
-row=3
-col=0
 
 [Trash]
 row=0

@@ -103,7 +103,7 @@ StairsResult calculate_stairs(float Sh, float Sl) {
 }
 ```
 
-Plik: main.cpp
+## Plik: main.cpp
 
 Plik main.cpp zawiera funkcję main, która odpowiada za interakcję z użytkownikiem:
 
@@ -140,7 +140,7 @@ int main() {
 }
 ```
 
-Plik: main_test.cpp
+## Plik: main_test.cpp
 
 Plik main_test.cpp zawiera zestaw testów jednostkowych dla funkcji calculate_stairs. Testy są realizowane przy użyciu frameworka Google Test.
 
