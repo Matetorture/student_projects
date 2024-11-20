@@ -1,4 +1,46 @@
-private StairsResult CalculateStairs(float Sh, float Sl)
+using System;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+
+namespace YourNamespace
+{
+    public partial class MainPage : ContentPage
+    {
+        private StairsResult _currentResult;
+
+        public MainPage()
+        {
+            InitializeComponent();
+            // Initialize GraphicsView's Drawable
+            StairsCanvas.Drawable = new StairsDrawable();
+        }
+
+        private void OnCalculateClicked(object sender, EventArgs e)
+        {
+            // Parse input
+            if (float.TryParse(StairHeightEntry.Text, out float Sh) &&
+                float.TryParse(StairLengthEntry.Text, out float Sl))
+            {
+                // Call CalculateStairs method
+                var result = CalculateStairs(Sh, Sl);
+                _currentResult = result;
+
+                // Display results
+                ResultLabel.Text = $"Number of Steps: {result.NumSteps}\n" +
+                                   $"Step Height: {result.StepHeight}\n" +
+                                   $"Step Depth: {result.StepDepth}";
+
+                // Redraw stairs with updated data
+                ((StairsDrawable)StairsCanvas.Drawable).UpdateStairs(result);
+                StairsCanvas.Invalidate();
+            }
+            else
+            {
+                ResultLabel.Text = "Please enter valid numeric values.";
+            }
+        }
+
+        private StairsResult CalculateStairs(float Sh, float Sl)
         {
             int minHeight = 16;
             int maxHeight = 19;
@@ -49,3 +91,51 @@ private StairsResult CalculateStairs(float Sh, float Sl)
             public float StepHeight { get; set; }
             public float StepDepth { get; set; }
         }
+
+        private class StairsDrawable : IDrawable
+        {
+            private StairsResult _stairs;
+
+            public void UpdateStairs(StairsResult stairs)
+            {
+                _stairs = stairs;
+            }
+
+            public void Draw(ICanvas canvas, RectF dirtyRect)
+            {
+                canvas.FillColor = Colors.LightGray;
+                canvas.FillRectangle(dirtyRect);
+
+                if (_stairs.NumSteps == 0)
+                    return;
+
+                float stepHeight = _stairs.StepHeight;
+                float stepDepth = _stairs.StepDepth;
+                int steps = _stairs.NumSteps;
+
+                float canvasWidth = dirtyRect.Width;
+                float canvasHeight = dirtyRect.Height;
+
+                float scale = Math.Min(canvasWidth / (steps * stepDepth), canvasHeight / (_stairs.NumSteps * stepHeight));
+
+                float x = 0, y = canvasHeight;
+
+                for (int i = 0; i < steps; i++)
+                {
+                    float scaledStepDepth = stepDepth * scale;
+                    float scaledStepHeight = stepHeight * scale;
+
+                    // Draw each step
+                    canvas.StrokeColor = Colors.Black;
+                    canvas.StrokeSize = 2;
+
+                    canvas.DrawLine(x, y, x + scaledStepDepth, y); // bottom line
+                    canvas.DrawLine(x + scaledStepDepth, y, x + scaledStepDepth, y - scaledStepHeight); // vertical line
+
+                    y -= scaledStepHeight;
+                    x += scaledStepDepth;
+                }
+            }
+        }
+    }
+}
